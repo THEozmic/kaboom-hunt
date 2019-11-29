@@ -1,5 +1,7 @@
 {
   "name": "kaboom-hunt",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "react"
 }

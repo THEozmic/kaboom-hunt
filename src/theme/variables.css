@@ -1,31 +1,33 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap");
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #3880ff;
-  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary: #4e65e2;
+  --ion-color-primary-rgb: 78, 101, 226;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #3171e0;
-  --ion-color-primary-tint: #4c8dff;
+  --ion-color-primary-shade: #4559c7;
+  --ion-color-primary-tint: #6074e5;
 
   /** secondary **/
-  --ion-color-secondary: #0cd1e8;
-  --ion-color-secondary-rgb: 12, 209, 232;
-  --ion-color-secondary-contrast: #ffffff;
-  --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #0bb8cc;
-  --ion-color-secondary-tint: #24d6ea;
+  --ion-color-secondary: #e6e8f3;
+  --ion-color-secondary-rgb: 230, 232, 243;
+  --ion-color-secondary-contrast: #000000;
+  --ion-color-secondary-contrast-rgb: 0, 0, 0;
+  --ion-color-secondary-shade: #caccd6;
+  --ion-color-secondary-tint: #e9eaf4;
 
   /** tertiary **/
-  --ion-color-tertiary: #7044ff;
-  --ion-color-tertiary-rgb: 112, 68, 255;
-  --ion-color-tertiary-contrast: #ffffff;
-  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
-  --ion-color-tertiary-shade: #633ce0;
-  --ion-color-tertiary-tint: #7e57ff;
+  --ion-color-tertiary: #d8deff;
+  --ion-color-tertiary-rgb: 216, 222, 255;
+  --ion-color-tertiary-contrast: #5c638c;
+  --ion-color-tertiary-contrast-rgb: 0, 0, 0;
+  --ion-color-tertiary-shade: #8d99dd;
+  --ion-color-tertiary-tint: #f4f7fa;
 
   /** success **/
   --ion-color-success: #10dc60;
@@ -73,5 +75,47 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-contrast: #000000;
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
-  --ion-color-light-tint: #f5f6f9;
+  --ion-color-light-tint: hsl(222, 57%, 95%);
+
+  --ion-font-family: "Poppins", sans-serif;
+  font-family: var(--ion-font-family) !important;
+}
+
+ion-button {
+  font-weight: bold;
+  --padding-start: 2em;
+  --padding-end: 2em;
+}
+
+ion-input {
+  border: 1px solid var(--ion-color-primary-shade);
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --background: var(--ion-color-secondary) !important;
+  --color: var(--ion-color-primary-shade) !important;
+}
+
+ion-toolbar {
+  --background: var(--ion-color-primary);
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+.form-control {
+  margin: 10px 0;
+}
+
+.heading > div {
+  text-align: center;
+  /* color: var(--ion-color-primary-tint); */
 }

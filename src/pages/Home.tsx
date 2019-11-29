@@ -1,25 +1,46 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import React from 'react';
+import {
+  IonIcon,
+  IonTabs,
+  IonTabBar,
+  IonTabButton,
+  IonLabel,
+  IonRouterOutlet
+} from "@ionic/react";
 
-const Home: React.FC = () => {
+import { settings, home } from "ionicons/icons";
+
+import React from "react";
+
+import HomeTab from "../components/HomeTab";
+import SettingsTab from "../components/SettingsTab";
+
+import { RouteComponentProps, Route, Redirect } from "react-router-dom";
+
+const Home: React.FC<RouteComponentProps> = ({ history }) => {
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Ionic Blank</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent className="ion-padding">
-        The world is your oyster.
-        <p>
-          If you get lost, the{' '}
-          <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/">
-            docs
-          </a>{' '}
-          will be your guide.
-        </p>
-      </IonContent>
-    </IonPage>
+    <IonTabs>
+      <IonRouterOutlet>
+        <Redirect exact path="/app" to="/app/home" />
+        <Route path="/app/home" render={() => <HomeTab />} exact={true} />
+        <Route
+          path="/app/settings"
+          render={() => <SettingsTab />}
+          exact={true}
+        />
+      </IonRouterOutlet>
+
+      <IonTabBar slot="bottom">
+        <IonTabButton tab="home" href="/app/home">
+          <IonIcon icon={home} />
+          <IonLabel>Home</IonLabel>
+        </IonTabButton>
+
+        <IonTabButton tab="settings" href="/app/settings">
+          <IonIcon icon={settings} />
+          <IonLabel>Settings</IonLabel>
+        </IonTabButton>
+      </IonTabBar>
+    </IonTabs>
   );
 };
 
